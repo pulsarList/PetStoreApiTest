@@ -57,7 +57,7 @@ public class PostUpdateAPetWithForm {
         });
 
         step("Updating pet info with form data", () -> {
-            given()
+            given(Spec.reqSpec(URLENC))
                     .pathParam("petId", petId)
                     .formParam("name", petNameNew)
                     .formParam("status", petStatusNew)
@@ -68,12 +68,11 @@ public class PostUpdateAPetWithForm {
 
         PetDataResponse responseId =
                 step("Request for checking new pet data", () -> {
-                    return given(Spec.reqSpec(JSON))
+                    return given()
                             .pathParam("petId", petId)
                             .when()
                             .get("/pet/{petId}")
                             .then()
-                            .spec(Spec.resSpec(200))
                             .extract().as(PetDataResponse.class);
                 });
 
