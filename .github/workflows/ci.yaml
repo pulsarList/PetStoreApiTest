@@ -1,0 +1,48 @@
+name: Test
+
+on: [ push ]
+
+
+jobs:
+  test:
+    # start где запуск
+    runs-on: ubuntu-latest
+    # what что делаем
+    steps:
+      # download repo выкачиваем репозиторий
+      - uses: actions/checkout@v4
+      # configuration настраиваем Java
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+          architecture: x64
+      # start test
+      - name: Change wrapper permissions
+        run: chmod +x ./gradlew
+      - run: ./gradlew clean test
+
+      # download history tests
+      - uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      # generation allure
+      - uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_results: build/allure-results
+          allure_report: allure-report
+          allure_history: allure-history
+
+      # публикация отчёта
+      - uses: peaceiris/actions-gh-pages@v2
+        if: always()
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
