@@ -2,7 +2,7 @@
 
 <br>
 <p align="center">
-<img width="70%" title="PetStore" src="images/logo/pet store.png">
+<img width="50%" title="PetStore" src="images/logo/pet store.png">
 </p>
 <br>
 
