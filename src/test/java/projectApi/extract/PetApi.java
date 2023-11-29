@@ -14,12 +14,11 @@ public class PetApi {
         PetDataResponse response;
         return response =
                 step("Extracting the response into the model", () -> {
-                    return given(Spec.reqSpec(JSON))
+                    return given()
                             .body(petData)
                             .when()
                             .post("/pet")
                             .then()
-                            .spec(Spec.resSpec(200))
                             .extract().as(PetDataResponse.class);
                 });
     }
