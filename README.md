@@ -94,6 +94,6 @@ gradle clean test
 
 
 <p align="center">
-<img width="70%" title="Telegram Notifications" src="images/screenshots/Telegram.png">
+<img width="50%" title="Telegram Notifications" src="images/screenshots/Telegram.png">
 </p>
 
