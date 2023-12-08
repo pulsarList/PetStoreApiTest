@@ -64,7 +64,7 @@ gradle clean test
 ### Ниже предоставлены: статус сборки, ссылка на саму сборку и сформированный отчёт
 
 >  [![Test](https://github.com/pulsarList/PetStoreApiTest/actions/workflows/ci.yaml/badge.svg)](https://github.com/pulsarList/PetStoreApiTest/actions/workflows/ci.yaml)
-> <br>  **[Github Actions job](https://github.com/pulsarList/PetStoreApiTest/actions/runs/7034489823/job/19142661029)** <br/>  **[Allure отчёт](https://pulsarlist.github.io/PetStoreApiTest/)**
+> <br>  **[Github Actions job](https://github.com/pulsarList/PetStoreApiTest/actions/runs/7140182553/job/19444958519)** <br/>  **[Allure отчёт](https://pulsarlist.github.io/PetStoreApiTest/)**
 
 
 ## <img width="4%" style="vertical-align:middle" title="Jenkins" src="images/logo/Jenkins.svg"> <a href="https://jenkins.autotests.cloud/job/Alfa_Test/15/"> Сборка в Jenkins</a>
